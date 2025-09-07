@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f2f2f7;
     text-align: center;
     display: flex;
@@ -18,20 +18,24 @@ body {
 /* Cabeçalho */
 .cabecalho {
     margin-top: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cabecalho img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%; /* redonda */
-    object-fit: cover; /* mantém proporção */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 15px;
-    border: 3px solid #ddd;
+    border: 4px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 .cabecalho h1 {
-    font-size: 24px;
+    font-size: 26px;
     color: #333;
     margin-bottom: 5px;
 }
@@ -45,32 +49,54 @@ body {
 .links {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
-.links a {
-    width: 60px;
+.app {
+    width: 280px;
     height: 60px;
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
 }
 
-.links a img {
+/* Efeito leve de brilho ao passar o mouse */
+.app::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+    transform: translateX(-100%) translateY(-100%) rotate(25deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.app:hover::before {
+    transform: translateX(0) translateY(0) rotate(25deg);
+    opacity: 1;
+}
+
+.app img {
     width: 28px;
     height: 28px;
     object-fit: cover;
+    z-index: 1; /* garante que fique acima do efeito */
 }
 
-/* Hover suave */
-.links a:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+/* Hover dos retângulos */
+.app:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
 /* Cores dos aplicativos */
@@ -87,6 +113,7 @@ footer {
     color: #555;
     margin-bottom: 20px;
 }
+
 
 
 
