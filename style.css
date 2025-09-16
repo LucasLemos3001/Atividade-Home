@@ -25,13 +25,15 @@ body {
 }
 
 .cabecalho img {
-    width: 150px;              /* largura fixa */
-    height: 150px;             /* mesma altura da largura */
-    border-radius: 50%;        /* deixa circular */
-    object-fit: cover;         /* recorta sem distorcer */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 15px;
-    border: 4px solid #ddd;    /* borda suave */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* sombra bonita */
+    border: 4px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
 .cabecalho h1 {
     font-size: 26px;
     color: #333;
@@ -59,10 +61,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     position: relative;
     overflow: hidden;
+    text-decoration: none;
 }
 
 /* Efeito leve de brilho ao passar o mouse */
@@ -88,7 +91,15 @@ body {
     width: 28px;
     height: 28px;
     object-fit: cover;
-    z-index: 1; /* garante que fique acima do efeito */
+    z-index: 1;
+}
+
+.app span {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    z-index: 1;
 }
 
 /* Hover dos retângulos */
@@ -101,7 +112,11 @@ body {
 .whatsapp { background-color: #25D366; }
 .telegram { background-color: #0088cc; }
 .twitter { background-color: #1DA1F2; }
-.instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.instagram { 
+    background: radial-gradient(circle at 30% 107%, 
+        #fdf497 0%, #fdf497 5%, #fd5949 45%, 
+        #d6249f 60%, #285AEB 90%); 
+}
 .youtube { background-color: #FF0000; }
 .linkedin { background-color: #0077B5; }
 
@@ -111,6 +126,7 @@ footer {
     color: #555;
     margin-bottom: 20px;
 }
+
 
 
 
